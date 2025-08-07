@@ -1,0 +1,83 @@
+/* Wrap nav items in irregular floating buttons */
+.nav ul {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.fluid-button {
+  display: inline-block;
+  margin: 0;
+  text-align: center;
+  padding: 1.2rem 2.4rem;
+  color: black;
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.6s ease;
+  z-index: 1;
+  mix-blend-mode: screen;
+  opacity: 0; /* Start invisible */
+  animation: fallIn 1.4s ease-out forwards;
+}
+
+.fluid-button:hover {
+  animation-delay: 1s;
+  color: hotpink;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 95vw;
+  height: 100vh;
+  border-radius: 0;
+  z-index: 0;
+  /*background-color: #d0f4de;*/
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.6s ease;
+}
+
+.button-name {
+  background-color: #bcfffa; /* pale lilac */
+  font-family: 'Epilogue', serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  padding: 3.5rem 4rem;
+  animation-delay: 0.5s;
+  border-radius: 30px;
+  color: black;
+  width: fit-content;
+  max-width: 90vw;
+  text-align: center;
+  clip-path: polygon(5% 5%, 95% 2%, 97% 90%, 3% 95%);
+  border: 6px solid black;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  z-index: 3;
+}
+
+.button-resume {
+  background-color: #d0f4de; /* pale mint green */
+  color: black;
+  font-size: 2.0rem;
+  padding: 2.0rem 2.5rem;
+  border-radius: 50% 50% 40% 60% / 60% 40% 60% 40%; /* blobby triangle-like */
+  transition: all 0.4s ease;
+  animation-delay: 1s;
+}
+
+.button-contact {
+  background-color: #ffaccf; /* pastel peach */
+  color: black;
+  border-radius: 20% 50% 50% 20% / 30% 60% 40% 70%; /* more rectangular, still organic */
+  animation-delay: 1.5s;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  padding: 2.5rem 4rem; /* makes it bigger inside the triangle */
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+
+
