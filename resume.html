@@ -12,6 +12,55 @@
       color: #222;
         margin-bottom: 50px;
     }
+.nav-container {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+}
+
+.nav-name {
+  font-size: 2.25rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: #222;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  min-width: 120px;
+  z-index: 999;
+}
+
+.dropdown-content a {
+  display: block;
+  color: #222;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
     .resume-wrapper {
       width: 100%;
@@ -141,26 +190,34 @@
     .download-btn a:hover {
       background-color: #4b2375;
     }
-.footer-disclaimer {
-  font-family: 'Georgia', serif;
-  font-size: 0.75rem;
-  color: #777;
-  text-align: center;
-  padding: 2rem 1rem 3rem;
-  margin-top: 4rem;
-  border-top: 1px solid #ccc;
-  background: linear-gradient(to top, #f8f8f8, transparent);
-  font-style: italic;
-  line-height: 1.6;
-  position: relative;
-}
+
+    .footer-disclaimer {
+      font-family: 'Georgia', serif;
+      font-size: 0.75rem;
+      color: #777;
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+      margin-top: 4rem;
+      border-top: 1px solid #ccc;
+      background: linear-gradient(to top, #f8f8f8, transparent);
+      font-style: italic;
+      line-height: 1.6;
+
+      /* Fix: remove flex */
+      display: block; /* back to default block layout */
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
 
 .footer-disclaimer em {
-  display: block;
-  font-size: 0.85rem;
-  color: #444;
-  letter-spacing: 0.1em;
-  margin-bottom: 0.5rem;
+  max-width: 700px;
+  text-align: center;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
 }
 
 .more-legalese {
@@ -170,12 +227,15 @@
 }
 
 .more-legalese a {
+  display: inline-block;
+  margin-top: 0.5rem;
   color: #663399;
   text-decoration: none;
   font-weight: bold;
   letter-spacing: 0.05em;
   transition: color 0.2s ease;
 }
+
 
 .more-legalese a:hover {
   color: #4b2375;
@@ -194,10 +254,18 @@
 
 
   <div class="resume-wrapper">
-    <header>
-      <h1>Brennan Reilly</h1>
-      <div class="tagline">Sound Design · Audio Engineering · Live Production</div>
-      </header>
+  <header>
+  <div class="nav-container">
+    <div class="dropdown">
+      <a href="index.html" class="nav-name">Brennan Reilly</a>
+      <div class="dropdown-content">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="tagline">Sound Design · Audio Engineering · Live Production</div>
+  </div>
+</header>
 
 <hr class="legal-line">
     <img src="assets/media/Reilly-Brennan-Resume.png" alt="Brennan Reilly Resume" />
