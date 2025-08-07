@@ -1,0 +1,66 @@
+.container {
+  animation: fallFade 1.6s ease-out forwards;
+}
+
+/* 🌌 Tie-dye-like background gradient overlay */
+.background-texture {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at 20% 30%, #2b134d 0%, transparent 50%),
+              radial-gradient(circle at 80% 70%, #003c3c 0%, transparent 50%),
+              radial-gradient(circle at 50% 50%, #0a0a0a 0%, #000000 100%);
+  z-index: -3;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* 🫧 Floating blobs */
+.blob {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.03), transparent 70%);
+  border-radius: 50%;
+  filter: blur(100px);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: -2;
+  animation: float 40s ease-in-out infinite alternate;
+}
+
+.blob1 {
+  top: -10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.blob2 {
+  bottom: -20%;
+  right: 15%;
+  animation-delay: 10s;
+}
+
+.blob3 {
+  top: 30%;
+  left: 50%;
+  animation-delay: 20s;
+}
+
+@keyframes fallIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes float {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(20px, -30px) scale(1.1); }
+}
